@@ -1,0 +1,22 @@
+{
+  "semi": true,
+  "trailingComma": "all",
+  "plugins": ["prettier-plugin-gherkin"],
+  "overrides": [
+    {
+      "files": ["*.feature", "*.json", "*.yml"],
+      "options": {
+        "printWidth": 80,
+        "trailingComma": "none",
+        "tabWidth": 2
+      }
+    }
+  ],
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "printWidth": 120,
+  "tabWidth": 2,
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "endOfLine": "lf"
+}

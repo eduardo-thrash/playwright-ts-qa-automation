@@ -1,4 +1,4 @@
-import { HomePage } from "@pages/herokuapp/HomePage";
+import { HomePage } from "@pages/herokuapp/home-page";
 import { expect, type Page } from "@playwright/test";
 
 export class HomeValidations {

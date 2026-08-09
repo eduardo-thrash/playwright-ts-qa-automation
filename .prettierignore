@@ -1,0 +1,20 @@
+# Ignore artifacts:
+build
+coverage
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+cucumber-*.*
+allure-results/
+.DS_Store
+.env
+.features-gen/*
+/cucumber-report/
+screenshots/
+package-lock.json
+.prettierignore
+tsconfig.json
+src/api/skydropx-pro-mx/quotations.feature
+src/ui/skydropx-pro-mx/features/shipment-creation-national.feature

@@ -10,4 +10,8 @@ export class HomePage {
   get subheading() {
     return this.page.getByRole("heading", { level: 2 });
   }
+
+  exampleLink(name: string) {
+    return this.page.getByRole("link", { name, exact: true });
+  }
 }

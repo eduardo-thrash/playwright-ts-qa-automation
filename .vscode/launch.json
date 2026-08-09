@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Playwright Debug",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "test:tag", "--", "@debug"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PWDEBUG": "1"
+      },
+      "outFiles": ["${workspaceFolder}/**/*.js"],
+      "smartStep": true
+    }
+  ]
+}
