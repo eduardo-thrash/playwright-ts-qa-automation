@@ -1,0 +1,25 @@
+{
+  "name": "playwright-ts-qa-automation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Scalable Web and API test automation architecture built with Playwright and TypeScript",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "bddgen": "bddgen",
+    "test": "bddgen && playwright test",
+    "test:headed": "bddgen && playwright test --headed",
+    "test:debug": "bddgen && playwright test --debug",
+    "test:chromium": "bddgen && playwright test --project=chromium",
+    "allure:generate": "allure generate allure-results -o allure-report --clean",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.0",
+    "@types/node": "^22.20.1",
+    "allure-playwright": "^3.10.2",
+    "dotenv": "^17.4.2",
+    "playwright-bdd": "^9.2.0",
+    "typescript": "^5.9.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "cucumberautocomplete.steps": ["src/ui/steps/**/*.ts"],
+  "cucumberautocomplete.syncfeatures": "src/ui/features/**/*.feature",
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "files.associations": {
+    "*.feature": "feature"
+  }
+}
