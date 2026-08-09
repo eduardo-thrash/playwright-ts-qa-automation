@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Inputs
 
   Scenario: Open the Inputs option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Inputs" option with path "/inputs"
-    Then the option page with path "/inputs" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Inputs" option
+    Then the "Inputs" page is displayed

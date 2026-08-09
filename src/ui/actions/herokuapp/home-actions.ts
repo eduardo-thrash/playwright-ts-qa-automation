@@ -1,8 +1,9 @@
-import { ClickActions } from "@actions/common/click-actions";
-import { NavigationActions } from "@actions/common/navigation-actions";
-import { WaitActions } from "@actions/common/wait-actions";
-import { HomePage } from "@pages/herokuapp/home-page";
-import { type Page } from "@playwright/test";
+import { ClickActions } from '@actions/common/click-actions';
+import { NavigationActions } from '@actions/common/navigation-actions';
+import { WaitActions } from '@actions/common/wait-actions';
+import { getHerokuappOptionConfig } from '@helpers/herokuapp/herokuapp-options';
+import { HomePage } from '@pages/herokuapp/home-page';
+import { type Page } from '@playwright/test';
 
 export class HomeActions {
   private readonly clickActions = new ClickActions();
@@ -17,13 +18,13 @@ export class HomeActions {
   }
 
   async openHomePage(): Promise<void> {
-    await this.navigationActions.navigateTo("/");
+    await this.navigationActions.navigateTo('/');
   }
 
-  async openOption(option: string, expectedPath: string): Promise<void> {
-    await this.clickActions.clickOn(this.homePage.exampleLink(option), {
-      noWaitAfter: true,
-    });
+  async openOption(option: string): Promise<void> {
+    const { href, expectedPath } = getHerokuappOptionConfig(option);
+
+    await this.clickActions.clickOn(this.homePage.exampleLink(href));
     await this.waitActions.waitForPath(expectedPath);
   }
 }

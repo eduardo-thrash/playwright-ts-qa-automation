@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Forgot Password
 
   Scenario: Open the Forgot Password option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Forgot Password" option with path "/forgot_password"
-    Then the option page with path "/forgot_password" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Forgot Password" option
+    Then the "Forgot Password" page is displayed

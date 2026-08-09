@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access File Upload
 
   Scenario: Open the File Upload option
-    Given the user has opened the the-internet homepage
-    When the user enters the "File Upload" option with path "/upload"
-    Then the option page with path "/upload" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "File Upload" option
+    Then the "File Upload" page is displayed

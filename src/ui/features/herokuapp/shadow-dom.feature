@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Shadow DOM
 
   Scenario: Open the Shadow DOM option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Shadow DOM" option with path "/shadowdom"
-    Then the option page with path "/shadowdom" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Shadow DOM" option
+    Then the "Shadow DOM" page is displayed

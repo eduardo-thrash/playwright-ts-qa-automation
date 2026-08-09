@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Disappearing Elements
 
   Scenario: Open the Disappearing Elements option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Disappearing Elements" option with path "/disappearing_elements"
-    Then the option page with path "/disappearing_elements" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Disappearing Elements" option
+    Then the "Disappearing Elements" page is displayed

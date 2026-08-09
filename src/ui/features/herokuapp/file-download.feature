@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access File Download
 
   Scenario: Open the File Download option
-    Given the user has opened the the-internet homepage
-    When the user enters the "File Download" option with path "/download"
-    Then the option page with path "/download" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "File Download" option
+    Then the "File Download" page is displayed

@@ -12,7 +12,7 @@
       "@actions/*": ["./src/ui/actions/*"],
       "@validations/*": ["./src/ui/validations/*"],
       "@fixtures/*": ["./src/fixtures/*"],
-      "@helpers/*": ["./src/helpers/*"],
+      "@helpers/*": ["./src/ui/helpers/*"],
       "@utils/*": ["./src/utils/*"]
     }
   },

@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Shifting Content
 
   Scenario: Open the Shifting Content option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Shifting Content" option with path "/shifting_content"
-    Then the option page with path "/shifting_content" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Shifting Content" option
+    Then the "Shifting Content" page is displayed

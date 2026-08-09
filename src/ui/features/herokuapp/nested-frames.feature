@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Nested Frames
 
   Scenario: Open the Nested Frames option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Nested Frames" option with path "/nested_frames"
-    Then the option page with path "/nested_frames" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Nested Frames" option
+    Then the "Nested Frames" page is displayed

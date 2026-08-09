@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Large & Deep DOM
 
   Scenario: Open the Large & Deep DOM option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Large & Deep DOM" option with path "/large"
-    Then the option page with path "/large" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Large & Deep DOM" option
+    Then the "Large & Deep DOM" page is displayed

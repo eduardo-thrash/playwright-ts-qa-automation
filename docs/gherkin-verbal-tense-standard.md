@@ -20,11 +20,11 @@ Los escenarios deben describir el comportamiento funcional del sistema desde la 
 
 Cada keyword debe tener una responsabilidad específica:
 
-| Keyword | Responsabilidad |
-|---|---|
-| `Given` | Establecer una precondición o estado previo. |
-| `When` | Describir la acción principal ejecutada por el actor. |
-| `Then` | Describir el resultado funcional observable. |
+| Keyword       | Responsabilidad                                              |
+| ------------- | ------------------------------------------------------------ |
+| `Given`       | Establecer una precondición o estado previo.                 |
+| `When`        | Describir la acción principal ejecutada por el actor.        |
+| `Then`        | Describir el resultado funcional observable.                 |
 | `And` / `But` | Continuar la intención y el tiempo verbal del step anterior. |
 
 Los steps no deben describir detalles internos del framework, acciones técnicas de validación ni implementación específica de Playwright, Cucumber o TypeScript.
@@ -454,15 +454,15 @@ Durante el review de archivos `.feature`, se debe validar:
 
 Los incumplimientos deben reportarse como `Naming` o `Code Smell`, según su impacto.
 
-| Hallazgo | Categoría sugerida | Riesgo sugerido |
-|---|---|---|
-| Tiempo verbal incorrecto | Naming | Low |
-| Keyword usada con intención incorrecta | Code Smell | Medium |
-| Step describe implementación técnica | Code Smell | Medium |
-| Resultado redactado como acción de validación | Naming | Low |
-| Duplicación de steps | Code Smell | Medium |
-| Escenario con múltiples comportamientos independientes | Code Smell | Medium |
-| Ambigüedad que puede ejecutar un step incorrecto | Bug | High |
+| Hallazgo                                               | Categoría sugerida | Riesgo sugerido |
+| ------------------------------------------------------ | ------------------ | --------------- |
+| Tiempo verbal incorrecto                               | Naming             | Low             |
+| Keyword usada con intención incorrecta                 | Code Smell         | Medium          |
+| Step describe implementación técnica                   | Code Smell         | Medium          |
+| Resultado redactado como acción de validación          | Naming             | Low             |
+| Duplicación de steps                                   | Code Smell         | Medium          |
+| Escenario con múltiples comportamientos independientes | Code Smell         | Medium          |
+| Ambigüedad que puede ejecutar un step incorrecto       | Bug                | High            |
 
 El nivel puede aumentar cuando el problema genere ambigüedad, bindings duplicados, ejecución incorrecta o mantenimiento riesgoso.
 
@@ -470,7 +470,7 @@ El nivel puede aumentar cuando el problema genere ambigüedad, bindings duplicad
 
 ## 14. Formato recomendado para reportar un hallazgo
 
-```markdown
+````markdown
 Change #N — [Principio SOLID: N/A] — [Estándar: gherkin-verbal-tense-standard.md]
 Ubicación: [ruta:línea](ruta#Llínea)
 Categoría: Naming
@@ -486,11 +486,13 @@ When the user created a shipment
 # Después
 When the user creates a shipment
 ```
+````
 
 PR Comment:
 
 > Issue: `When` uses past tense. | Impact: Breaks the project's Gherkin wording convention. | Fix: Use present tense: `When the user creates a shipment`.
-```
+
+````
 
 ---
 
@@ -507,14 +509,15 @@ PR Comment:
 - [ ] Cada step tiene un sujeto claro.
 - [ ] No existen steps funcionalmente duplicados.
 - [ ] Cada Scenario cubre un comportamiento principal.
-```
+````
 
 ---
 
 ## 16. Ejemplo final recomendado
 
 ```gherkin
-@ui @address-templates
+@ui
+@address-templates
 Feature: Address template management
 
   @baseline

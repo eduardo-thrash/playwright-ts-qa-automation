@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Digest Authentication
 
   Scenario: Open the Digest Authentication option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Digest Authentication" option with path "/digest_auth"
-    Then the option page with path "/digest_auth" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Digest Authentication" option
+    Then the "Digest Authentication" page is displayed

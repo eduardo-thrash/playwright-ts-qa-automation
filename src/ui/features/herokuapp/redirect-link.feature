@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Redirect Link
 
   Scenario: Open the Redirect Link option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Redirect Link" option with path "/redirector"
-    Then the option page with path "/redirector" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Redirect Link" option
+    Then the "Redirect Link" page is displayed

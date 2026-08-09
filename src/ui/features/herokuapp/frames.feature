@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Frames
 
   Scenario: Open the Frames option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Frames" option with path "/frames"
-    Then the option page with path "/frames" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Frames" option
+    Then the "Frames" page is displayed

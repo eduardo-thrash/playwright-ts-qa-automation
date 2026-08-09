@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Add/Remove Elements
 
   Scenario: Open the Add/Remove Elements option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Add/Remove Elements" option with path "/add_remove_elements/"
-    Then the option page with path "/add_remove_elements/" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Add/Remove Elements" option
+    Then the "Add/Remove Elements" page is displayed

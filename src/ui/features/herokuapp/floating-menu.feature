@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Floating Menu
 
   Scenario: Open the Floating Menu option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Floating Menu" option with path "/floating_menu"
-    Then the option page with path "/floating_menu" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Floating Menu" option
+    Then the "Floating Menu" page is displayed

@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Secure File Download
 
   Scenario: Open the Secure File Download option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Secure File Download" option with path "/download_secure"
-    Then the option page with path "/download_secure" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Secure File Download" option
+    Then the "Secure File Download" page is displayed

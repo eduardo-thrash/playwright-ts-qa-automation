@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Typos
 
   Scenario: Open the Typos option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Typos" option with path "/typos"
-    Then the option page with path "/typos" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Typos" option
+    Then the "Typos" page is displayed

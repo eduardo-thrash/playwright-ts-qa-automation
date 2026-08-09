@@ -1,8 +1,8 @@
-@navigation @herokuapp
+@navigation
+@herokuapp
 Feature: Access Dynamic Loading
 
   Scenario: Open the Dynamic Loading option
-    Given the user has opened the the-internet homepage
-    When the user enters the "Dynamic Loading" option with path "/dynamic_loading"
-    Then the option page with path "/dynamic_loading" is displayed
-
+    Given the user was on the the-internet homepage
+    When the user opens the "Dynamic Loading" option
+    Then the "Dynamic Loading" page is displayed
