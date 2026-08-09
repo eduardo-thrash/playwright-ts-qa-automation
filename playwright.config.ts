@@ -16,6 +16,7 @@ export default defineConfig({
   reporter: [['list'], ['allure-playwright', { resultsDir: 'allure-results' }]],
   use: {
     baseURL,
+    headless: false,
     httpCredentials: {
       username: process.env.HEROKUAPP_USERNAME ?? 'admin',
       password: process.env.HEROKUAPP_PASSWORD ?? 'admin',
