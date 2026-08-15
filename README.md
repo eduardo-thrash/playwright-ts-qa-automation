@@ -178,6 +178,7 @@ npm run format
 ## Standards
 
 - [Gherkin wording and verb-tense standard](docs/gherkin-verbal-tense-standard.md)
+- [Function and method naming standard](docs/function-and-method-naming-standard.md)
 
 Additional architecture, TypeScript, Playwright, selector, assertion, and test-data standards remain TODO under `docs/standards/`.
 

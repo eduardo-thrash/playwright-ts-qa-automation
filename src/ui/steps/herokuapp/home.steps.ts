@@ -10,7 +10,7 @@ Given('the user was on the the-internet homepage', async ({ page }) => {
 });
 
 Then('the homepage is displayed', async ({ page }) => {
-  await new HomeValidations(page).pageIsDisplayed();
+  await new HomeValidations(page).expectPageToBeDisplayed();
 });
 
 When('the user opens the {string} option', async ({ page }, option: string) => {
@@ -18,5 +18,5 @@ When('the user opens the {string} option', async ({ page }, option: string) => {
 });
 
 Then('the {string} page is displayed', async ({ page }, option: string) => {
-  await new HomeValidations(page).optionPageIsDisplayed(option);
+  await new HomeValidations(page).expectOptionPageToBeDisplayed(option);
 });

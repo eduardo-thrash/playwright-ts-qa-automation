@@ -53,7 +53,7 @@ const HEROKUAPP_OPTIONS: Readonly<Record<string, HerokuappOptionConfig>> = {
   'WYSIWYG Editor': { href: '/tinymce', expectedPath: '/tinymce' },
 };
 
-export function getHerokuappOptionConfig(option: string): HerokuappOptionConfig {
+export function requireHerokuappOptionConfig(option: string): HerokuappOptionConfig {
   const config = HEROKUAPP_OPTIONS[option];
 
   if (!config) {

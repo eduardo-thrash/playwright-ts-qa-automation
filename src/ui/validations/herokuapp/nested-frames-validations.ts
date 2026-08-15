@@ -8,7 +8,7 @@ export class NestedFramesValidations {
     this.nestedFramesPage = new NestedFramesPage(page);
   }
 
-  async pageIsDisplayed(): Promise<void> {
+  async expectPageToBeDisplayed(): Promise<void> {
     await expect(this.nestedFramesPage.topFrame).toBeAttached();
     await expect(this.nestedFramesPage.bottomFrame).toBeAttached();
     await expect(this.nestedFramesPage.leftContent).toHaveText('LEFT');

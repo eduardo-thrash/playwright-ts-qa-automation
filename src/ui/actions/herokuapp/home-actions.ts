@@ -1,7 +1,7 @@
 import { ClickActions } from '@actions/common/click-actions';
 import { NavigationActions } from '@actions/common/navigation-actions';
 import { WaitActions } from '@actions/common/wait-actions';
-import { getHerokuappOptionConfig } from '@helpers/herokuapp/herokuapp-options';
+import { requireHerokuappOptionConfig } from '@helpers/herokuapp/herokuapp-options';
 import { HomePage } from '@pages/herokuapp/home-page';
 import { type Page } from '@playwright/test';
 
@@ -22,9 +22,9 @@ export class HomeActions {
   }
 
   async openOption(option: string): Promise<void> {
-    const { href, expectedPath } = getHerokuappOptionConfig(option);
+    const { href, expectedPath } = requireHerokuappOptionConfig(option);
 
-    await this.clickActions.clickOn(this.homePage.exampleLink(href));
+    await this.clickActions.clickOn(this.homePage.optionLink(href));
     await this.waitActions.waitForPath(expectedPath);
   }
 }

@@ -1,5 +1,5 @@
 import { HomePage } from '@pages/herokuapp/home-page';
-import { getHerokuappOptionConfig } from '@helpers/herokuapp/herokuapp-options';
+import { requireHerokuappOptionConfig } from '@helpers/herokuapp/herokuapp-options';
 import { CommonValidations } from '@validations/common/common-validations';
 import { NestedFramesValidations } from '@validations/herokuapp/nested-frames-validations';
 import { expect, type Page } from '@playwright/test';
@@ -17,18 +17,18 @@ export class HomeValidations {
     this.page = page;
   }
 
-  async pageIsDisplayed(): Promise<void> {
-    await expect(this.homePage.heading).toBeVisible();
-    await expect(this.homePage.heading).toHaveText('Welcome to the-internet');
+  async expectPageToBeDisplayed(): Promise<void> {
+    await expect(this.homePage.mainHeading).toBeVisible();
+    await expect(this.homePage.mainHeading).toHaveText('Welcome to the-internet');
   }
 
-  async optionPageIsDisplayed(option: string): Promise<void> {
-    const { expectedPath } = getHerokuappOptionConfig(option);
+  async expectOptionPageToBeDisplayed(option: string): Promise<void> {
+    const { expectedPath } = requireHerokuappOptionConfig(option);
 
-    await this.commonValidations.pathIsDisplayed(expectedPath);
+    await this.commonValidations.expectPathToBe(expectedPath);
 
     if (option === 'Nested Frames') {
-      await this.nestedFramesValidations.pageIsDisplayed();
+      await this.nestedFramesValidations.expectPageToBeDisplayed();
       return;
     }
 
