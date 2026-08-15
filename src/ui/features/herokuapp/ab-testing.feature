@@ -46,7 +46,7 @@ Feature: A/B Testing
   @edge
   Scenario: Keep every repeated response within the supported variants
     Given the user was on the "A/B Testing" page
-    When the user reloads the page repeatedly
+    When the user reloads the A/B Testing page repeatedly
     Then every displayed heading belongs to the supported experiment variants
     And every response contains the experiment description
 

@@ -27,4 +27,11 @@ export class HomeActions {
     await this.clickActions.clickOn(this.homePage.optionLink(href));
     await this.waitActions.waitForPath(expectedPath);
   }
+
+  async openOptionPage(option: string): Promise<void> {
+    const { href, expectedPath } = requireHerokuappOptionConfig(option);
+
+    await this.navigationActions.navigateTo(href);
+    await this.waitActions.waitForPath(expectedPath);
+  }
 }

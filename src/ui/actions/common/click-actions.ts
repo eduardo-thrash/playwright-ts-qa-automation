@@ -4,4 +4,8 @@ export class ClickActions {
   async clickOn(locator: Locator): Promise<void> {
     await locator.click();
   }
+
+  async rightClickOn(locator: Locator, position?: { x: number; y: number }): Promise<void> {
+    await locator.click({ button: 'right', position });
+  }
 }

@@ -35,13 +35,13 @@ Feature: Key Presses
   @edge
   Scenario: Report an arrow key
     Given the key input had focus
-    When the user presses ArrowUp
+    When the user presses ArrowUp in the key input
     Then the result is "You entered: UP"
 
   @edge
   Scenario: Report the Space key
     Given the key input had focus
-    When the user presses Space
+    When the user presses Space in the key input
     Then the result identifies the Space key
 
   @navigation

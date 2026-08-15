@@ -38,7 +38,7 @@ Feature: Redirect Link
   @edge
   Scenario: Reload the redirect landing page
     Given the redirect ended on the Status Codes page
-    When the user reloads the page
+    When the user reloads the Status Codes landing page
     Then the Status Codes page remains displayed
     And all documented status links are available
 

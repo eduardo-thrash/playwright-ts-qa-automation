@@ -26,7 +26,7 @@ Feature: File Upload
   Scenario: Submit without selecting a file
     Given no upload file was selected
     When the user submits the upload form
-    Then no uploaded filename is displayed
+    Then the upload request is rejected by the server
     And no successful upload confirmation is shown
 
   @negative

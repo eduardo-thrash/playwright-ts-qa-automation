@@ -37,11 +37,11 @@ Feature: Status Codes
     And the page reports status code 500
 
   @edge
-  Scenario: Request an undocumented status code
-    Given an undocumented status-code path was available
+  Scenario: Request a status code outside the linked examples
+    Given status code 418 was not listed on the Status Codes page
     When the user requests that status-code path
-    Then the response is not successful
-    And no documented status detail is displayed
+    Then the response status is 418
+    And the page reports status code 418
 
   @edge
   Scenario: Navigate through every documented status example

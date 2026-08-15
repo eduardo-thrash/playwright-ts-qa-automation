@@ -38,7 +38,7 @@ Feature: Typos
   @edge
   Scenario: Keep every repeated result within the accepted set
     Given the user was on the "Typos" page
-    When the user reloads the page repeatedly
+    When the user reloads the Typos page repeatedly
     Then every sentence belongs to the documented variant set
     And every page remains usable
 

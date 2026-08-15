@@ -2,22 +2,25 @@
 Feature: Forgot Password
 
   @happy-path
-  Scenario: Request a password reminder with a valid email
+  Scenario: Accept a valid recovery email
     Given a valid email address was available
-    When the user requests password recovery
-    Then the email sent confirmation is displayed
+    When the user reviews the recovery form
+    Then the recovery email value is accepted
+    And the recovery action is available
 
   @alternate-success
-  Scenario: Request recovery with an uppercase email address
+  Scenario: Accept an uppercase recovery email address
     Given a valid uppercase email address was available
-    When the user requests password recovery
-    Then the email sent confirmation is displayed
+    When the user reviews the recovery form
+    Then the recovery email value is accepted
+    And the recovery action is available
 
   @alternate-success
-  Scenario: Request recovery with a plus-addressed email
+  Scenario: Accept a plus-addressed recovery email
     Given a valid plus-addressed email was available
-    When the user requests password recovery
-    Then the email sent confirmation is displayed
+    When the user reviews the recovery form
+    Then the recovery email value is accepted
+    And the recovery action is available
 
   @negative
   Scenario: Prevent recovery with an empty email
@@ -34,16 +37,18 @@ Feature: Forgot Password
     And the email field reports an invalid value
 
   @edge
-  Scenario: Accept a long valid email address
+  Scenario: Accept a long recovery email address
     Given a long valid email address was available
-    When the user requests password recovery
-    Then the email sent confirmation is displayed
+    When the user reviews the recovery form
+    Then the recovery email value is accepted
+    And the recovery action is available
 
   @edge
-  Scenario: Accept an email containing supported special characters
+  Scenario: Accept supported special characters in a recovery email
     Given a valid email with supported special characters was available
-    When the user requests password recovery
-    Then the email sent confirmation is displayed
+    When the user reviews the recovery form
+    Then the recovery email value is accepted
+    And the recovery action is available
 
   @navigation
   Scenario: Open the Forgot Password option

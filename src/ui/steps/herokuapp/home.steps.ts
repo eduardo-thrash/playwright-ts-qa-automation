@@ -9,6 +9,10 @@ Given('the user was on the the-internet homepage', async ({ page }) => {
   await new HomeActions(page).openHomePage();
 });
 
+Given('the user was on the {string} page', async ({ page }, option: string) => {
+  await new HomeActions(page).openOptionPage(option);
+});
+
 Then('the homepage is displayed', async ({ page }) => {
   await new HomeValidations(page).expectPageToBeDisplayed();
 });

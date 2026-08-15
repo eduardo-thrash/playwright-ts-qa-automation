@@ -38,7 +38,7 @@ Feature: Checkboxes
   @edge
   Scenario: Toggle a checkbox with the keyboard
     Given the first checkbox had keyboard focus
-    When the user presses Space
+    When the user presses Space on the focused checkbox
     Then the first checkbox changes its selected state
 
   @edge

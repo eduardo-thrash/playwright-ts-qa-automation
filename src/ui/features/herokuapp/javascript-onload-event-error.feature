@@ -18,7 +18,7 @@ Feature: JavaScript onload event error
   @alternate-success
   Scenario: Emit the expected error after reload
     Given the initial onload error was captured
-    When the user reloads the page
+    When the user reloads the JavaScript error page
     Then the expected onload error is emitted again
     And the explanatory content remains visible
 
