@@ -29,8 +29,16 @@ export class InputActions {
     await this.page.keyboard.press(key);
   }
 
+  async typeText(text: string): Promise<void> {
+    await this.page.keyboard.type(text);
+  }
+
   async focusOn(locator: Locator): Promise<void> {
     await locator.focus();
+  }
+
+  async selectText(locator: Locator): Promise<void> {
+    await locator.selectText();
   }
 
   async uploadFile(locator: Locator, file: string | UploadFilePayload): Promise<void> {

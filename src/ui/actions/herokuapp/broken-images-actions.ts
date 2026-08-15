@@ -12,16 +12,20 @@ export class BrokenImagesActions {
     this.navigationActions = new NavigationActions(page);
     this.optionPage = new BrokenImagesPage(page);
   }
+
   async openPage(): Promise<void> {
     await this.homeActions.openOptionPage('Broken Images');
   }
+
   async waitForImages(): Promise<void> {
     await this.optionPage.exampleImages.last().waitFor({ state: 'attached' });
   }
+
   async requestMissingImage(): Promise<void> {
     const response = await this.page.request.get('/asdf.jpg');
     setScenarioValue(this.page, 'missingImageStatus', response.status());
   }
+
   async reloadPage(): Promise<void> {
     await this.navigationActions.reloadPage();
     await this.waitForImages();

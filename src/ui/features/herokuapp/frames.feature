@@ -5,7 +5,7 @@ Feature: Frames
   Scenario: Edit content inside the iFrame
     Given the user was on the iFrame example
     When the user replaces the editor content with "Updated frame content"
-    Then the editor contains "Updated frame content"
+    Then the iFrame editor contains "Updated frame content"
 
   @alternate-success
   Scenario: Open the Nested Frames example
@@ -39,7 +39,7 @@ Feature: Frames
   Scenario: Enter multiline content in the iFrame editor
     Given the user was on the iFrame example
     When the user enters multiline editor content
-    Then every entered line is present in the editor
+    Then every entered line is present in the iFrame editor
 
   @edge
   Scenario: Switch between both frame examples

@@ -3,11 +3,23 @@ import { test } from '@fixtures/test';
 import { JavaScriptAlertsValidations } from '@validations/herokuapp/javascript-alerts-validations';
 import { createBdd } from 'playwright-bdd';
 const { When, Then } = createBdd(test);
-When('the user enters {string} in the JavaScript prompt', async ({ page }, text: string) => new JavaScriptAlertsActions(page).acceptPrompt(text));
+When('the user enters {string} in the JavaScript prompt', async ({ page }, text: string) =>
+  new JavaScriptAlertsActions(page).acceptPrompt(text),
+);
 When('the user accepts the JavaScript alert', async ({ page }) => new JavaScriptAlertsActions(page).acceptAlert());
-When('the user accepts the JavaScript confirmation', async ({ page }) => new JavaScriptAlertsActions(page).acceptConfirmation());
-When('the user dismisses the JavaScript confirmation', async ({ page }) => new JavaScriptAlertsActions(page).dismissConfirmation());
+When('the user accepts the JavaScript confirmation', async ({ page }) =>
+  new JavaScriptAlertsActions(page).acceptConfirmation(),
+);
+When('the user dismisses the JavaScript confirmation', async ({ page }) =>
+  new JavaScriptAlertsActions(page).dismissConfirmation(),
+);
 When('the user dismisses the JavaScript prompt', async ({ page }) => new JavaScriptAlertsActions(page).dismissPrompt());
-When('the user accepts the JavaScript prompt without text', async ({ page }) => new JavaScriptAlertsActions(page).acceptPrompt());
-When('the user enters Unicode text in the JavaScript prompt', async ({ page }) => new JavaScriptAlertsActions(page).acceptPrompt('áéíóú 中文 🚀'));
-Then('the complete Unicode text is displayed in the result', async ({ page }) => new JavaScriptAlertsValidations(page).expectUnicodeResultToBeComplete());
+When('the user accepts the JavaScript prompt without text', async ({ page }) =>
+  new JavaScriptAlertsActions(page).acceptPrompt(),
+);
+When('the user enters Unicode text in the JavaScript prompt', async ({ page }) =>
+  new JavaScriptAlertsActions(page).acceptPrompt('áéíóú 中文 🚀'),
+);
+Then('the complete Unicode text is displayed in the result', async ({ page }) =>
+  new JavaScriptAlertsValidations(page).expectUnicodeResultToBeComplete(),
+);

@@ -8,10 +8,31 @@ export class LargeDeepDomActions {
   private readonly scrollActions: ScrollActions;
   private readonly waitActions: WaitActions;
   private readonly navigationActions: NavigationActions;
-  constructor(page: Page) { this.optionPage = new LargeDeepDomPage(page); this.scrollActions = new ScrollActions(page); this.waitActions = new WaitActions(page); this.navigationActions = new NavigationActions(page); }
-  async openPage(): Promise<void> { await this.navigationActions.navigateTo('/large'); }
-  async accessDeepestElement(): Promise<void> { await this.scrollActions.scrollTo(this.optionPage.deepestElement); }
-  async accessTableCell(row: number, column: number): Promise<void> { await this.scrollActions.scrollTo(this.optionPage.tableCell(row, column)); }
-  async waitForTable(): Promise<void> { await this.waitActions.waitForVisibility(this.optionPage.dataTable); }
-  async accessTableBoundaries(): Promise<void> { await this.accessTableCell(1, 1); await this.accessTableCell(50, 50); }
+  constructor(page: Page) {
+    this.optionPage = new LargeDeepDomPage(page);
+    this.scrollActions = new ScrollActions(page);
+    this.waitActions = new WaitActions(page);
+    this.navigationActions = new NavigationActions(page);
+  }
+
+  async openPage(): Promise<void> {
+    await this.navigationActions.navigateTo('/large');
+  }
+
+  async accessDeepestElement(): Promise<void> {
+    await this.scrollActions.scrollTo(this.optionPage.deepestElement);
+  }
+
+  async accessTableCell(row: number, column: number): Promise<void> {
+    await this.scrollActions.scrollTo(this.optionPage.tableCell(row, column));
+  }
+
+  async waitForTable(): Promise<void> {
+    await this.waitActions.waitForVisibility(this.optionPage.dataTable);
+  }
+
+  async accessTableBoundaries(): Promise<void> {
+    await this.accessTableCell(1, 1);
+    await this.accessTableCell(50, 50);
+  }
 }

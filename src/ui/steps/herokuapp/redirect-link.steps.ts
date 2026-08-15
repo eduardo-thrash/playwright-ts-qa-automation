@@ -3,18 +3,40 @@ import { test } from '@fixtures/test';
 import { RedirectLinkValidations } from '@validations/herokuapp/redirect-link-validations';
 import { createBdd } from 'playwright-bdd';
 const { Given, When, Then } = createBdd(test);
-Given('the redirect ended on the Status Codes page', async ({ page }) => new RedirectLinkActions(page).openSourceAndFollowRedirect());
+Given('the redirect ended on the Status Codes page', async ({ page }) =>
+  new RedirectLinkActions(page).openSourceAndFollowRedirect(),
+);
 Given('the redirect source page was reopened', async ({ page }) => new RedirectLinkActions(page).openSourcePage());
 When('the user follows the redirect link', async ({ page }) => new RedirectLinkActions(page).followRedirect());
 When('the user follows the redirect link again', async ({ page }) => new RedirectLinkActions(page).followRedirect());
 When('the user navigates back', async ({ page }) => new RedirectLinkActions(page).navigateBack());
-When('the available redirect actions are displayed', async ({ page }) => new RedirectLinkActions(page).viewRedirectActions());
-When('the user reloads the Status Codes landing page', async ({ page }) => new RedirectLinkActions(page).reloadLandingPage());
-Then('the final path is {string}', async ({ page }, path: string) => new RedirectLinkValidations(page).expectFinalPathToBe(path));
-Then('the Redirect Link page is displayed', async ({ page }) => new RedirectLinkValidations(page).expectSourcePageToBeDisplayed());
-Then('the redirect link remains actionable', async ({ page }) => new RedirectLinkValidations(page).expectRedirectLinkToBeActionable());
-Then('the final page is not the intermediate redirect endpoint', async ({ page }) => new RedirectLinkValidations(page).expectFinalPageNotToBeIntermediateEndpoint());
-Then('only the documented redirect destination is actionable', async ({ page }) => new RedirectLinkValidations(page).expectOnlyDocumentedDestinationToBeActionable());
-Then('the Status Codes page remains displayed', async ({ page }) => new RedirectLinkValidations(page).expectFinalPathToBe('/status_codes'));
-Then('all documented status links are available', async ({ page }) => new RedirectLinkValidations(page).expectFinalPathToBe('/status_codes'));
-Then('the Status Codes content is visible', async ({ page }) => new RedirectLinkValidations(page).expectFinalPathToBe('/status_codes'));
+When('the available redirect actions are displayed', async ({ page }) =>
+  new RedirectLinkActions(page).viewRedirectActions(),
+);
+When('the user reloads the Status Codes landing page', async ({ page }) =>
+  new RedirectLinkActions(page).reloadLandingPage(),
+);
+Then('the final path is {string}', async ({ page }, path: string) =>
+  new RedirectLinkValidations(page).expectFinalPathToBe(path),
+);
+Then('the Redirect Link page is displayed', async ({ page }) =>
+  new RedirectLinkValidations(page).expectSourcePageToBeDisplayed(),
+);
+Then('the redirect link remains actionable', async ({ page }) =>
+  new RedirectLinkValidations(page).expectRedirectLinkToBeActionable(),
+);
+Then('the final page is not the intermediate redirect endpoint', async ({ page }) =>
+  new RedirectLinkValidations(page).expectFinalPageNotToBeIntermediateEndpoint(),
+);
+Then('only the documented redirect destination is actionable', async ({ page }) =>
+  new RedirectLinkValidations(page).expectOnlyDocumentedDestinationToBeActionable(),
+);
+Then('the Status Codes page remains displayed', async ({ page }) =>
+  new RedirectLinkValidations(page).expectFinalPathToBe('/status_codes'),
+);
+Then('all documented status links are available', async ({ page }) =>
+  new RedirectLinkValidations(page).expectFinalPathToBe('/status_codes'),
+);
+Then('the Status Codes content is visible', async ({ page }) =>
+  new RedirectLinkValidations(page).expectFinalPathToBe('/status_codes'),
+);

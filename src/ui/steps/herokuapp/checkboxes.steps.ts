@@ -30,16 +30,28 @@ When('the user checks both checkboxes', async ({ page }) => {
   await actions.checkCheckbox(1);
   await actions.checkCheckbox(2);
 });
-When('the user presses Space on the focused checkbox', async ({ page }) => new CheckboxesActions(page).toggleFocusedCheckbox());
+When('the user presses Space on the focused checkbox', async ({ page }) =>
+  new CheckboxesActions(page).toggleFocusedCheckbox(),
+);
 When('the checkbox group is displayed', async ({ page }) => new CheckboxesActions(page).focusCheckbox(1));
 
 Then('the first checkbox is checked', async ({ page }) => new CheckboxesValidations(page).expectCheckboxToBeChecked(1));
-Then('the first checkbox remains checked', async ({ page }) => new CheckboxesValidations(page).expectCheckboxToBeChecked(1));
-Then('the second checkbox is unchecked', async ({ page }) => new CheckboxesValidations(page).expectCheckboxToBeUnchecked(2));
-Then('exactly two checkboxes are available', async ({ page }) => new CheckboxesValidations(page).expectCheckboxCountToBe(2));
+Then('the first checkbox remains checked', async ({ page }) =>
+  new CheckboxesValidations(page).expectCheckboxToBeChecked(1),
+);
+Then('the second checkbox is unchecked', async ({ page }) =>
+  new CheckboxesValidations(page).expectCheckboxToBeUnchecked(2),
+);
+Then('exactly two checkboxes are available', async ({ page }) =>
+  new CheckboxesValidations(page).expectCheckboxCountToBe(2),
+);
 Then('no third checkbox is actionable', async ({ page }) => new CheckboxesValidations(page).expectCheckboxCountToBe(2));
-Then('no additional checkbox is created', async ({ page }) => new CheckboxesValidations(page).expectCheckboxCountToBe(2));
-Then('the first checkbox changes its selected state', async ({ page }) => new CheckboxesValidations(page).expectCheckboxToBeChecked(1));
+Then('no additional checkbox is created', async ({ page }) =>
+  new CheckboxesValidations(page).expectCheckboxCountToBe(2),
+);
+Then('the first checkbox changes its selected state', async ({ page }) =>
+  new CheckboxesValidations(page).expectCheckboxToBeChecked(1),
+);
 Then('both checkboxes are checked', async ({ page }) => {
   const validations = new CheckboxesValidations(page);
   await validations.expectCheckboxToBeChecked(1);

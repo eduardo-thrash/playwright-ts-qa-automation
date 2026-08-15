@@ -4,14 +4,32 @@ import { StatusCodesValidations } from '@validations/herokuapp/status-codes-vali
 import { createBdd } from 'playwright-bdd';
 const { Given, When, Then } = createBdd(test);
 Given('a status detail page was visible', async ({ page }) => new StatusCodesActions(page).openStatus(200));
-Given('status code 418 was not listed on the Status Codes page', async ({ page }) => new StatusCodesActions(page).openPage());
-When(/^the user opens status code (200|301|404|500)$/, async ({ page }, status: string) => new StatusCodesActions(page).openListedStatus(Number(status)));
+Given('status code 418 was not listed on the Status Codes page', async ({ page }) =>
+  new StatusCodesActions(page).openPage(),
+);
+When(/^the user opens status code (200|301|404|500)$/, async ({ page }, status: string) =>
+  new StatusCodesActions(page).openListedStatus(Number(status)),
+);
 When('the user follows the return link', async ({ page }) => new StatusCodesActions(page).followReturnLink());
 When('the user requests that status-code path', async ({ page }) => new StatusCodesActions(page).openStatus(418));
-When('the user opens each documented status code', async ({ page }) => new StatusCodesActions(page).openEveryDocumentedStatus());
-Then(/^the response status is (200|301|404|500|418)$/, async ({ page }, status: string) => new StatusCodesValidations(page).expectResponseStatusToBe(Number(status)));
-Then(/^the page reports status code (200|301|404|500|418)$/, async ({ page }, status: string) => new StatusCodesValidations(page).expectPageToReportStatus(Number(status)));
-Then('the Status Codes page is displayed', async ({ page }) => new StatusCodesValidations(page).expectListPageToBeDisplayed());
-Then('all documented status links are visible', async ({ page }) => new StatusCodesValidations(page).expectAllStatusLinksToBeVisible());
-Then('each response matches its selected status code', async ({ page }) => new StatusCodesValidations(page).expectEveryRecordedResponseToMatchSelection());
-Then('each detail page identifies that status code', async ({ page }) => new StatusCodesValidations(page).expectEveryRecordedResponseToMatchSelection());
+When('the user opens each documented status code', async ({ page }) =>
+  new StatusCodesActions(page).openEveryDocumentedStatus(),
+);
+Then(/^the response status is (200|301|404|500|418)$/, async ({ page }, status: string) =>
+  new StatusCodesValidations(page).expectResponseStatusToBe(Number(status)),
+);
+Then(/^the page reports status code (200|301|404|500|418)$/, async ({ page }, status: string) =>
+  new StatusCodesValidations(page).expectPageToReportStatus(Number(status)),
+);
+Then('the Status Codes page is displayed', async ({ page }) =>
+  new StatusCodesValidations(page).expectListPageToBeDisplayed(),
+);
+Then('all documented status links are visible', async ({ page }) =>
+  new StatusCodesValidations(page).expectAllStatusLinksToBeVisible(),
+);
+Then('each response matches its selected status code', async ({ page }) =>
+  new StatusCodesValidations(page).expectEveryRecordedResponseToMatchSelection(),
+);
+Then('each detail page identifies that status code', async ({ page }) =>
+  new StatusCodesValidations(page).expectEveryRecordedResponseToMatchSelection(),
+);

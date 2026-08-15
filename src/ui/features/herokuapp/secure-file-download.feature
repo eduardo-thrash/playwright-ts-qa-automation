@@ -7,15 +7,15 @@ Feature: Secure File Download
     And at least one protected file was available
     When the user downloads the first protected file
     Then the protected download has completed
-    And the downloaded file has a nonempty name
+    And the protected downloaded file has a nonempty name
 
   @alternate-success
-  Scenario: Download a second protected file
+  Scenario: Download the last protected file
     Given the user was authorized for secure downloads
-    And at least two protected files were available
-    When the user downloads the second protected file
+    And at least one protected file was available
+    When the user downloads the last protected file
     Then the protected download has completed
-    And its suggested name matches the selected link
+    And the protected suggested name matches the selected link
 
   @alternate-success
   Scenario: Reload the authenticated download list
@@ -37,20 +37,20 @@ Feature: Secure File Download
     Then access to the protected file list is denied
 
   @edge
-  Scenario: Download a protected file with spaces in its name
+  Scenario: Preserve the selected protected filename
     Given the user was authorized for secure downloads
-    And a protected file with spaces in its name was available
-    When the user downloads that file
-    Then the download has completed
-    And the suggested filename preserves the spaces
+    And at least one protected file was available
+    When the user downloads the last protected file
+    Then the protected download has completed
+    And the protected suggested name matches the selected link
 
   @edge
   Scenario: Start two protected downloads in the same session
     Given the user was authorized for secure downloads
-    And at least two protected files were available
-    When the user downloads two different protected files
-    Then two downloads have completed
-    And each download has its own suggested filename
+    And at least one protected file was available
+    When the user downloads the first protected file twice
+    Then two protected downloads have completed
+    And each protected download has the selected suggested filename
 
   @navigation
   Scenario: Open the Secure File Download option

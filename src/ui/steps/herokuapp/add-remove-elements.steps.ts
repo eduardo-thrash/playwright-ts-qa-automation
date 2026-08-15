@@ -30,12 +30,8 @@ When('the user removes one element', async ({ page }) => new AddRemoveElementsAc
 When('the user repeatedly adds and removes an element', async ({ page }) =>
   new AddRemoveElementsActions(page).addAndRemoveRepeatedly(),
 );
-When('the user views the removal area', async ({ page }) =>
-  new AddRemoveElementsActions(page).viewRemovalArea(),
-);
-When('the user views the removal area again', async ({ page }) =>
-  new AddRemoveElementsActions(page).viewRemovalArea(),
-);
+When('the user views the removal area', async ({ page }) => new AddRemoveElementsActions(page).viewRemovalArea());
+When('the user views the removal area again', async ({ page }) => new AddRemoveElementsActions(page).viewRemovalArea());
 
 Then('no Delete button is visible', async ({ page }) =>
   new AddRemoveElementsValidations(page).expectDeleteButtonCountToBe(0),

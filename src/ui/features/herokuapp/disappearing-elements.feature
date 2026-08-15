@@ -45,7 +45,7 @@ Feature: Disappearing Elements
   @edge
   Scenario: Keep the menu within its documented size across reloads
     Given the user was on the "Disappearing Elements" page
-    When the user reloads the page repeatedly
+    When the user reloads the Disappearing Elements page repeatedly
     Then each menu contains four or five navigation elements
     And every menu contains the required navigation elements
 

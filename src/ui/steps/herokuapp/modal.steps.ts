@@ -1,0 +1,12 @@
+import { ModalActions } from '@actions/herokuapp/modal-actions';
+import { test } from '@fixtures/test';
+import { ModalValidations } from '@validations/common/modal-validations';
+import { createBdd } from 'playwright-bdd';
+const { When, Then } = createBdd(test);
+When('the user closes the modal', async ({ page }) => new ModalActions(page).closeModal());
+When('the user immediately closes the modal', async ({ page }) => new ModalActions(page).closeModal());
+Then('the modal is hidden', async ({ page }) => new ModalValidations(page).expectModalToBeHidden());
+Then('the modal remains hidden', async ({ page }) => new ModalValidations(page).expectModalToBeHidden());
+Then('the modal remains visible', async ({ page }) => new ModalValidations(page).expectModalToBeVisible());
+Then('its title is {string}', async ({ page }, title: string) => new ModalValidations(page).expectTitleToBe(title));
+Then('at most one modal is visible at a time', async ({ page }) => new ModalValidations(page).expectOnlyOneModal());

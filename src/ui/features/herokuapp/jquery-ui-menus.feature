@@ -27,7 +27,7 @@ Feature: JQuery UI Menus
     Given the user was on the "JQuery UI Menus" page
     When the user hovers over Disabled
     Then no actionable disabled submenu is displayed
-    And no download is started
+    And no JQuery menu download is started
 
   @negative
   Scenario: Keep Downloads unavailable before Enabled is expanded

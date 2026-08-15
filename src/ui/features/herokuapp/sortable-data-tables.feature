@@ -45,7 +45,7 @@ Feature: Sortable Data Tables
   Scenario: Preserve duplicate due amounts while sorting
     Given the second data table was visible
     When the user sorts by Due
-    Then both records owing "$50.00" remain present
+    Then both fifty-dollar records remain present
     And four total records are visible
 
   @navigation

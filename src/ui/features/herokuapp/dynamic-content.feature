@@ -18,7 +18,7 @@ Feature: Dynamic Content
   @alternate-success
   Scenario: Keep static content unchanged after reload
     Given the static content variant was visible
-    When the user reloads the page
+    When the user reloads the static Dynamic Content page
     Then every static content block remains unchanged
     And every static image source remains unchanged
 
@@ -39,7 +39,7 @@ Feature: Dynamic Content
   @edge
   Scenario: Preserve the content structure across repeated reloads
     Given the user was on the "Dynamic Content" page
-    When the user reloads the page repeatedly
+    When the user reloads the Dynamic Content page repeatedly
     Then every response contains three content blocks
     And every response remains usable
 

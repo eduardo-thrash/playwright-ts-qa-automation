@@ -16,9 +16,9 @@ Feature: Geolocation
     And the second configured longitude is displayed
 
   @alternate-success
-  Scenario: Open the displayed location in the map link
+  Scenario: Expose the displayed location in the map link
     Given the current coordinates were displayed
-    When the user opens the location map link
+    When the user inspects the location map link
     Then the map destination contains the displayed coordinates
 
   @negative

@@ -4,11 +4,23 @@ import { KeyPressesValidations } from '@validations/herokuapp/key-presses-valida
 import { createBdd } from 'playwright-bdd';
 const { Given, When, Then } = createBdd(test);
 Given('the key input had focus', async ({ page }) => new KeyPressesActions(page).openPageAndFocusInput());
-Given('the result displayed {string}', async ({ page }) => { const actions = new KeyPressesActions(page); await actions.openPageAndFocusInput(); await actions.pressKey('A'); });
-When(/^the user presses (Escape|A|Enter|B)$/, async ({ page }, key: string) => new KeyPressesActions(page).pressKey(key));
+Given('the result displayed {string}', async ({ page }, _result: string) => {
+  const actions = new KeyPressesActions(page);
+  await actions.openPageAndFocusInput();
+  await actions.pressKey('A');
+});
+When(/^the user presses (Escape|A|Enter|B)$/, async ({ page }, key: string) =>
+  new KeyPressesActions(page).pressKey(key),
+);
 When('the user presses ArrowUp in the key input', async ({ page }) => new KeyPressesActions(page).pressKey('ArrowUp'));
 When('the user presses Space in the key input', async ({ page }) => new KeyPressesActions(page).pressKey('Space'));
 When('no key was pressed', async ({ page }) => new KeyPressesActions(page).viewEmptyResult());
-Then('no entered-key result is displayed', async ({ page }) => new KeyPressesValidations(page).expectNoResultToBeDisplayed());
-Then('the previous result is not appended', async ({ page }) => new KeyPressesValidations(page).expectPreviousResultNotToBeAppended());
-Then('the result identifies the Space key', async ({ page }) => new KeyPressesValidations(page).expectSpaceKeyToBeReported());
+Then('no entered-key result is displayed', async ({ page }) =>
+  new KeyPressesValidations(page).expectNoResultToBeDisplayed(),
+);
+Then('the previous result is not appended', async ({ page }) =>
+  new KeyPressesValidations(page).expectPreviousResultNotToBeAppended(),
+);
+Then('the result identifies the Space key', async ({ page }) =>
+  new KeyPressesValidations(page).expectSpaceKeyToBeReported(),
+);

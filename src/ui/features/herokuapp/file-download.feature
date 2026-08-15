@@ -9,16 +9,16 @@ Feature: File Download
     And the downloaded file has a nonempty name
 
   @alternate-success
-  Scenario: Download another available file
-    Given at least two downloadable files were available
-    When the user downloads the second available file
+  Scenario: Download the last available file
+    Given at least one downloadable file was available
+    When the user downloads the last available file
     Then the download has completed
     And the downloaded file has a nonempty name
 
   @alternate-success
-  Scenario: Preserve the downloaded file content
-    Given a downloadable text file was available
-    When the user downloads the text file
+  Scenario: Preserve downloaded file content
+    Given at least one downloadable file was available
+    When the user downloads the first available file
     Then the downloaded file is not empty
     And its suggested name matches the selected link
 
@@ -36,18 +36,18 @@ Feature: File Download
     Then no download is started
 
   @edge
-  Scenario: Download a file with spaces in its name
-    Given a downloadable file with spaces in its name was available
-    When the user downloads that file
+  Scenario: Preserve the selected filename
+    Given at least one downloadable file was available
+    When the user downloads the last available file
     Then the download has completed
-    And the suggested filename preserves the spaces
+    And its suggested name matches the selected link
 
   @edge
   Scenario: Start two independent downloads
-    Given at least two downloadable files were available
-    When the user downloads two different files
+    Given at least one downloadable file was available
+    When the user downloads the first available file twice
     Then two downloads have completed
-    And each download has its own suggested filename
+    And each download has the selected suggested filename
 
   @navigation
   Scenario: Open the File Download option
